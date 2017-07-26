@@ -15,25 +15,25 @@ def help(bot, update):
 					'Tablas 1: /tables\n'\
 					'Tablas 2: /tables2\n')
 def tables1(bot, update):
-	server = "10.248.1.209"
-	user = "esolis"
-	password = "Python@Monitor"
-	base = "StoragePython"
+	server = ""
+	user = ""
+	password = ""
+	base = ""
 	conexion_sql = pymssql.connect(server, user, password, base)
 	cur = conexion_sql.cursor()
-	consulta = "SELECT TOP(10) id,servidor FROM LogData"
+	consulta = "SELECT TOP(10)  FROM "
 	cur.execute(consulta)
 	for row in cur.fetchall():
 		resultado = row[0], row[1]
 		update.message.reply_text(resultado)
 def tables2(bot, update):
-	server = "10.248.1.209"
-	user = "esolis"
-	password = "Python@Monitor"
-	base = "StoragePython"
+	server = ""
+	user = ""
+	password = ""
+	base = ""
 	conexion_sql = pymssql.connect(server, user, password, base)
 	cur2 = conexion_sql.cursor()
-	consulta2 = "SELECT ID,Usuario,CONVERT(nvarchar,DiaGuardado) FROM LogKillProcesstMySQL"
+	consulta2 = "SELECT CONVERT(nvarchar,) FROM "
 	cur2.execute(consulta2)
 	for row2 in cur2.fetchall():
 		resultado2 = row2[0], row2[1], row2[2]
@@ -46,7 +46,7 @@ def error(bot, update, error):
 	logger.warn('Update "%s" caused error "%s"' % (update, error))
 
 def main():
-	updater = Updater("431796863:AAE3n-2Va42qA6Jp4YxFPnNZX8dJ8ICLlUo")
+	updater = Updater("TOKEN")
 
 	dp = updater.dispatcher
 
